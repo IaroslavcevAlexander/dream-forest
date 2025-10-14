@@ -1,6 +1,7 @@
 import { Fragment, type FC, type JSX } from "react";
 import { Outlet } from "react-router-dom";
-import Menu from "./menu"
+// import Menu from "./menu"
+import Header from "./header/HeaderTop"
 
 interface Props {
     children: JSX.Element
@@ -10,7 +11,8 @@ const Layout: FC<Props> = ({ children }) => {
     console.log("papipups")
     return(
         <Fragment>
-            <Menu />
+            <Header/>
+            {/* <Menu /> */}
             <Outlet />
             {children}
         </Fragment>
