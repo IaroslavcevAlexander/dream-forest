@@ -17,6 +17,7 @@ const GridInner = styled(Inner)(({ theme }) => ({
     alignItems: 'center',
     justifyContent: 'end',
     gap: theme.spacing(3),
+    margin: 0,
 }))
 
 const StyledLink = styled(NavLink)(({ theme }) => ({
@@ -27,14 +28,18 @@ const StyledLink = styled(NavLink)(({ theme }) => ({
     alignItems: "center",
     '& img': {
         marginLeft: "7px",
+        marginRight: "7px",
         width: "20px",
         height: "20px",
-        Top: "13px",
-        Left:  "1537px",
     },
-    '&.active': {
-        color: '#e1d4d4',
-    }
+}))
+
+const PhoneLink = styled('a')(({ theme }) => ({
+    textDecoration: 'none',
+    color: theme.palette.common.white,
+    fontWeight: 400,
+    display: "flex",
+    alignItems: "center",
 }))
 
 const HeaderTop = () => {
@@ -42,15 +47,16 @@ const HeaderTop = () => {
         <ThemeProvider theme={Theme}>
             <GridContainer>
                 <GridInner>
-                    <StyledLink
-                        to="tel:+37367114339"
+                    <PhoneLink
+                        href="tel:+37367114339"
                         className="phone-number">
                         0 67 114-339
-                    </StyledLink>
+                    </PhoneLink>
 
                     <StyledLink
                     to="delivery"
                     >
+                        <img src="img/icons/box 1.svg" alt="delivery" />
                         Доставка
                     </StyledLink>
                     
