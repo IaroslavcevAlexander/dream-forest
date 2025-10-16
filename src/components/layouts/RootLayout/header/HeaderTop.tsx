@@ -3,19 +3,28 @@ import { Box, ThemeProvider, styled } from "@mui/material";
 import Theme from '../../../../config/theme';
 import Inner from '../../../../components/Inner/Inner'
 
-const FlexContainer = styled(Box)(({ theme }) =>({
+const GridContainer = styled(Box)(({ theme }) =>({
     backgroundColor: theme.palette.common.black,
-    display: 'flex',
-    justifyContent: 'flex-end',
+    display: 'grid',
     alignItems: 'center',
     gap: theme.spacing(3),
     height: '40px',
+}))
+
+const GridInner = styled(Inner)(({ theme }) => ({
+    display: 'grid',
+    gridAutoFlow: 'column',
+    alignItems: 'center',
+    justifyContent: 'end',
+    gap: theme.spacing(3),
 }))
 
 const StyledLink = styled(NavLink)(({ theme }) => ({
     textDecoration: 'none',
     color: theme.palette.common.white,
     fontWeight: 400,
+    display: "flex",
+    alignItems: "center",
     '& img': {
         marginLeft: "7px",
         width: "20px",
@@ -31,8 +40,8 @@ const StyledLink = styled(NavLink)(({ theme }) => ({
 const HeaderTop = () => {
     return(
         <ThemeProvider theme={Theme}>
-            <FlexContainer>
-                <Inner>
+            <GridContainer>
+                <GridInner>
                     <StyledLink
                         to="tel:+37367114339"
                         className="phone-number">
@@ -49,10 +58,10 @@ const HeaderTop = () => {
                     to="language"
                     >
                         Русский
-                        <img src="public/img/icons/russia 1.SVG" alt="language" />
+                        <img src="img/icons/russia 1.svg" alt="language" />
                     </StyledLink>
-                </Inner>
-            </FlexContainer>
+                </GridInner>
+            </GridContainer>
         </ThemeProvider>
     )
 }
