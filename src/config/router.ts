@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router'
 
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const convert = (m: any) => {
-  let {
+  const {
     clientLoader,
     clientAction,
     default: Component,
@@ -21,6 +21,14 @@ const Router = createBrowserRouter([
     path: "/",
     lazy: () => import("../components/layouts/RootLayout").then(convert),
     children: [
+      {
+        path: "delivery",
+        lazy: () => import("../pages/Delivery").then(convert)
+      },
+      {
+        path: "language",
+        lazy: () => import("../pages/Language").then(convert)
+      },
       {
         index: true,
         lazy: () => import("../pages/Home").then(convert)
