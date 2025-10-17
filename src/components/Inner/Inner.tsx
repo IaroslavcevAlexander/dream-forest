@@ -5,6 +5,7 @@ const Inner = styled(Box)(({ theme }) => ({
     display: 'grid',
     maxWidth: '1200px',
     margin: '0 auto',
+
     [theme.breakpoints.down('md')]: {
         gridTemplateColumns: 'repeat(6, 1fr)',
     },

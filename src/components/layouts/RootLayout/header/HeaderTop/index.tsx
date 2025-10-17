@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { Box, ThemeProvider, styled } from "@mui/material";
-import Theme from '../../../../config/theme';
-import Inner from '../../../../components/Inner/Inner'
+import Theme from '../../../../../config/theme';
+import Inner from '../../../../Inner/Inner';
 
 const GridContainer = styled(Box)(({ theme }) =>({
     backgroundColor: theme.palette.common.black,
