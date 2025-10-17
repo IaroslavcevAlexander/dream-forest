@@ -58,20 +58,20 @@ const Header = () => {
                 <RightBlock>
                     <Box>
                         <img src="img/icons/profile icon man.svg" alt="Profile" />
-                        <p>Профиль</p>
+                        <Box>Профиль</Box>
                     </Box>
 
                     <StyledLink>
                         <Box>
                             <img src="img/icons/heart favorites.svg" alt="Profile" />
-                            <p>Избранное</p>
+                            <Box>Избранное</Box>
                         </Box>
                     </StyledLink>
 
                     <StyledLink>
                         <Box>
                             <img src="img/icons/shopping cart.svg" alt="Profile" />
-                            <p>Корзина</p>
+                            <Box>Корзина</Box>
                         </Box>
                     </StyledLink>
                 </RightBlock>
