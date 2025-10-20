@@ -29,7 +29,6 @@ const DeliveryIcon = styled('a')(({ theme }) => ({
     },
 }))
 
-
 const HeaderTop = () => {
     return(
         <Root>
@@ -56,7 +55,8 @@ const HeaderTop = () => {
                     <Box 
                         component="img" 
                         src="img/icons/russia 1.svg" 
-                        alt="language"/>
+                        alt="language"
+                    />
                 </NavLink>
             </Inner> 
         </Root>
