@@ -16,43 +16,47 @@ const convert = (m: any) => {
   };
 }
 
-const Router = createBrowserRouter([
+const importPageComponent = (path: string) => {
+  return () => import(/* @vite-ignore */ path).then(convert);
+};
+
+const router = createBrowserRouter([
   {
     path: "/",
-    lazy: () => import("../components/layouts/RootLayout").then(convert),
+    lazy: importPageComponent("../components/layouts/RootLayout"),
     children: [
       {
         path: "delivery",
-        lazy: () => import("../pages/Delivery").then(convert)
+        lazy: importPageComponent("../pages/Delivery"),
       },
       {
-        path: "language",
-        lazy: () => import("../pages/Language").then(convert)
+        path: "settings",
+        lazy: importPageComponent("../components/modals/Settings"),
       },
       {
         index: true,
-        lazy: () => import("../pages/Home").then(convert)
+        lazy: importPageComponent("../pages/Home"),
       },
       {
         path: "contact",
-        lazy: () => import("../pages/Contact").then(convert)
+        lazy: importPageComponent("../pages/Contact"),
       },
       {
         path: "about",
-        lazy: () => import("../pages/About").then(convert)
+        lazy: importPageComponent("../pages/About"),
       },
       {
         path: "catalog",
-        lazy: () => import("../components/layouts/CatalogLayout").then(convert),
+        lazy: importPageComponent("../components/layouts/CatalogLayout"),
         children: [
           {
             index: true,
-            lazy: () => import("../pages/Catalog").then(convert),
+            lazy: importPageComponent("../pages/Catalog"),
           }
         ]
       },
     ]
   }
 ])
-export default Router;
+export default router;
 

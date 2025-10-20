@@ -11,6 +11,7 @@ const GridContainer = styled(Box)(({ theme }) =>({
     width: "100%",
     margin: '0 auto',
     padding: theme.spacing(1, 3),
+    borderColor: '#ECECEC',
 }))
 
 const LeftBlock = styled(Box)({

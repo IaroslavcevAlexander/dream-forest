@@ -6,7 +6,7 @@ declare module '@mui/material/styles' {
   }
 }
 
-const Theme = createTheme({
+const theme = createTheme({
   palette: {
     common: {
       white: '#ffffff',
@@ -18,4 +18,4 @@ const Theme = createTheme({
     },
   },
 })
-export default Theme;
+export default theme;
