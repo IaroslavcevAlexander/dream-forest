@@ -7,25 +7,51 @@ const Root = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.common.black,
 }));
 
-const DeliveryIcon = styled('a')(({ theme }) => ({
+const Item = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    color: theme.palette.common.white,
+}));
+
+const Line = styled(Box)(() => ({
+    width: '1px',
+    height: '100%',
+    backgroundColor: '#fff',
+}));
+
+const DeliveryIcon = styled(Box)(({ theme }) => ({
+    display: 'flex',
     position: 'relative',
+    alignItems: 'center',
     color: theme.palette.common.white,
     textDecoration: 'none',
-    alignItems: 'center',
     fontWeight: 400,
     paddingLeft: '28px',
-
     '&::before': {
         content: '""',
         position: 'absolute',
-        left: 0,
-        top: '50%',
-        transform: 'translateY(-50%)',
         width: '20px',
         height: '20px',
-        backgroundImage: 'url("img/icons/box 1.svg")',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
+        left: 0,
+        backgroundImage: 'url("img/icons/box 1.svg")'
+    },
+}))
+
+const SettingsIcons = styled(Box)(() => ({
+    display: 'flex',
+    position: 'relative',
+    alignItems: 'center',
+    textDecoration: 'none',
+    fontWeight: 400,
+    '&::after': {
+        content: '""',
+        position: 'absolute',
+        width: '20px',
+        height: '20px',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
+        backgroundImage: 'url("img/icons/russia 1.svg")',
     },
 }))
 
@@ -33,7 +59,7 @@ const HeaderTop = () => {
     return(
         <Root>
             <Inner 
-                display={"flex"} 
+                display="flex"
                 justifyContent="end" 
                 alignItems="center" 
                 padding="13px 0"    
@@ -42,21 +68,22 @@ const HeaderTop = () => {
                 <Box component="a" 
                     href="tel:+37367114339"
                     className="phone-number">
-                    0 67 114-339
+                    <Item>0 67 114-339</Item>
+                    <Line />
                 </Box>
 
                 <NavLink to="delivery">
-                    <DeliveryIcon />
-                    Доставка
+                    <DeliveryIcon>
+                        <Item>Доставка</Item>
+                    </DeliveryIcon>
+                    <Line />
                 </NavLink>
 
                 <NavLink to="settings">
-                    Русский
-                    <Box 
-                        component="img" 
-                        src="img/icons/russia 1.svg" 
-                        alt="language"
-                    />
+                    <Item>
+                        Русский
+                        <SettingsIcons marginLeft='7px' />
+                    </Item>
                 </NavLink>
             </Inner> 
         </Root>

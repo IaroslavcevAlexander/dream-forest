@@ -17,5 +17,10 @@ const theme = createTheme({
       50: '#424242',
     },
   },
+
+  typography: {
+    fontFamily: 'Jost, Arial, sans-serif',
+    // mono: 'SUSE Mono, monospace',
+  },
 })
 export default theme;

@@ -1,15 +1,16 @@
+import { Box } from "@mui/material";
 
 const Profile = () =>{
     return(
         <>
-            <img src="img/icons/logo 3.svg" alt="logo-dream-forest" />
+            <Box component="img" src="img/icons/logo 3.svg" alt="logo-dream-forest" />
             <input></input>
             <input></input>
             <button>Войти</button>
             <p>или</p>
-            <img src="img/icons/facebook logo.svg" alt="facebook" />
-            <img src="img/icons/vk logo.svg" alt="VK" />
-            <img src="img/icons/google logo.svg" alt="Google" />
+            <Box component="img" src="img/icons/facebook logo.svg" alt="facebook" />
+            <Box component="img" src="img/icons/vk logo.svg" alt="VK" />
+            <Box component="img" src="img/icons/google logo.svg" alt="Google" />
         </>
     )
 }
