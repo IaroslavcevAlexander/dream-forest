@@ -16,7 +16,6 @@ const App: FC = () => {
   ) 
 }
 
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

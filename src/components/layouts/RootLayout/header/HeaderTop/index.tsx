@@ -7,15 +7,26 @@ const Root = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.common.black,
 }));
 
+const noUnderline = {
+    textDecoration: 'none',
+    padding: '13px 0',
+  '&:hover': { textDecoration: 'none' },
+};
+
+const Phone = styled('a')(() => noUnderline);
+const Link = styled(NavLink)(() => noUnderline);
+
 const Item = styled(Box)(({ theme }) => ({
     display: 'flex',
     color: theme.palette.common.white,
+    textDecoration: 'none',
 }));
 
 const Line = styled(Box)(() => ({
+    display: 'flex',
     width: '1px',
-    height: '100%',
-    backgroundColor: '#fff',
+    height: '40px',
+    backgroundColor: '#424242',
 }));
 
 const DeliveryIcon = styled(Box)(({ theme }) => ({
@@ -61,30 +72,29 @@ const HeaderTop = () => {
             <Inner 
                 display="flex"
                 justifyContent="end" 
-                alignItems="center" 
-                padding="13px 0"    
+                alignItems="center"  
                 gap="30px"
             >
-                <Box component="a" 
-                    href="tel:+37367114339"
-                    className="phone-number">
+                <Phone href="tel:+37367114339">
                     <Item>0 67 114-339</Item>
-                    <Line />
-                </Box>
+                </Phone>
 
-                <NavLink to="delivery">
+                <Line />
+
+                <Link to="delivery">
                     <DeliveryIcon>
                         <Item>Доставка</Item>
                     </DeliveryIcon>
-                    <Line />
-                </NavLink>
+                </Link>
+                 
+                <Line />
 
-                <NavLink to="settings">
+                <Link to="settings">
                     <Item>
                         Русский
                         <SettingsIcons marginLeft='7px' />
                     </Item>
-                </NavLink>
+                </Link>
             </Inner> 
         </Root>
 

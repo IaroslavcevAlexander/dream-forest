@@ -18,7 +18,7 @@ const convert = (m: any) => {
 
 const importPageComponent = (path: string) => {
   return () => import(/* @vite-ignore */ path).then(convert);
-};
+}
 
 const router = createBrowserRouter([
   {
