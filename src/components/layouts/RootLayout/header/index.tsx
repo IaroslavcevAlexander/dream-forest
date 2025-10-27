@@ -1,6 +1,7 @@
 import { Box, IconButton, styled } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Inner from "../../../Inner/Inner";
+import { useNavigate } from "react-router-dom";
 
 
 const Root = styled(Box)(({ theme }) => ({
@@ -17,6 +18,7 @@ const Last = styled(Box)(() => ({
     display: "flex",
     alignItems: "center",  
     gap: "30px",
+    fontWeight: 400,
 }))
 
 const StyledLink = styled(Box)(({ theme }) => ({
@@ -31,6 +33,8 @@ const StyledLink = styled(Box)(({ theme }) => ({
 }))
 
 const Header = () => {
+    const navigate = useNavigate();
+
     return(
         <Root>
             <Inner 
@@ -40,7 +44,11 @@ const Header = () => {
             gap="30px"
             >  
                 <First>
-                    <Box component="img" src="img/icons/dream forest big.svg" alt="logo-dream-forest" />
+                    <Box component="img" 
+                    src="img/icons/dream forest big.svg" 
+                    alt="logo-dream-forest" 
+                    onClick={() => navigate("/")}
+                    />
 
                     <IconButton
                         sx={{
@@ -55,18 +63,18 @@ const Header = () => {
                     </IconButton>
                 </First>
 
-                    <Box component="input" type="text" placeholder="Поиск..." style={{ 
-                        height: '36px',
-                        width: '100%',
-                        marginLeft: '15px',
-                        border: '1px solid',
-                        borderRadius: '20px', 
-                        borderColor: '#ECECEC',
-                        color: '#BABABA',
-                        fontSize: '14px',
-                        fontWeight: 400,
-                        paddingLeft: '25px',
-                    }}/>
+                <Box component="input" type="text" placeholder="Поиск..." style={{
+                    height: '36px',
+                    width: '100%',
+                    marginLeft: '15px',
+                    border: '1px solid',
+                    borderRadius: '20px', 
+                    borderColor: '#ECECEC',
+                    color: '#BABABA',
+                    fontSize: '14px',
+                    fontWeight: 400,
+                    paddingLeft: '25px',
+                }}/>
 
                 <Last>
                     <StyledLink>

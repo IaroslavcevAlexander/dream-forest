@@ -20,6 +20,7 @@ const Item = styled(Box)(({ theme }) => ({
     display: 'flex',
     color: theme.palette.common.white,
     textDecoration: 'none',
+    fontWeight: 400,
 }));
 
 const Line = styled(Box)(() => ({

@@ -1,8 +1,11 @@
+import Inner from "../../components/Inner/Inner"; 
+import Categories from "./Categories/index"
+
 const HomePage = () => {
     return(
-        <div className="p">
-            hello home..
-        </div>
+        <Inner>
+            <Categories /> 
+        </Inner>
     )
 }
 export default HomePage;

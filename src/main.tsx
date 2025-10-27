@@ -14,7 +14,7 @@ const App: FC = () => {
       <RouterProvider router = {Router} />
     </ThemeProvider>
   ) 
-}
+} 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

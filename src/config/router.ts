@@ -26,34 +26,16 @@ const router = createBrowserRouter([
     lazy: importPageComponent("../components/layouts/RootLayout"),
     children: [
       {
+        index: true,
+        lazy: importPageComponent("../pages/Home"),
+      },
+      {
         path: "delivery",
         lazy: importPageComponent("../pages/Delivery"),
       },
       {
         path: "settings",
         lazy: importPageComponent("../components/modals/Settings"),
-      },
-      {
-        index: true,
-        lazy: importPageComponent("../pages/Home"),
-      },
-      {
-        path: "contact",
-        lazy: importPageComponent("../pages/Contact"),
-      },
-      {
-        path: "about",
-        lazy: importPageComponent("../pages/About"),
-      },
-      {
-        path: "catalog",
-        lazy: importPageComponent("../components/layouts/CatalogLayout"),
-        children: [
-          {
-            index: true,
-            lazy: importPageComponent("../pages/Catalog"),
-          }
-        ]
       },
     ]
   }

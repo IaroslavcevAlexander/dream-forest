@@ -1,6 +1,6 @@
 import { Fragment, type FC, type JSX } from "react";
 import { Outlet } from "react-router-dom";
-import HeaderTop from "./Header/HeaderTop";
+import HeaderTop from "./Header/HeaderTop/index";
 import Header from "./Header/index";
 
 interface Props {
