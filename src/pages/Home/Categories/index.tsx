@@ -1,10 +1,6 @@
 // import { Public } from "@mui/icons-material";
-import { Box, Button, styled } from "@mui/material";
 import type { FC } from "react";
-
-const Root = styled(Box)(() => ({
-    backgroundColor: "#FAFAFA",
-}))
+import { Root, CatItem, Btn } from "./styled-component"
 
 interface CatProps {
     data: Data
@@ -24,7 +20,7 @@ const items = [
     }, 
     {
         name: "Одежда", 
-        img: "/img/man and woman.svg",
+        img: "/img/man-and-woman.svg",
         id: 2
     }, 
     {
@@ -47,12 +43,10 @@ const Categories = () => {
 const Category: FC<CatProps> = ({ data }) => {
     const {name, img} = data
     return(
-        <Box> 
-            <img src={img} alt={name} />
-            <Button>{name}</Button>
-        </Box>    
+        <CatItem sx={{backgroundImage: `url(${img})`}}> 
+            <Btn>{name}</Btn>
+        </CatItem>    
     )
 }
-
 
 export default Categories;
