@@ -1,14 +1,22 @@
 import Inner from "../../components/Inner/Inner"
 import Categories from "./Categories/index"
 import { CatBg } from "../../pages/Home/styled-components"
+import Baners from "../Home/Baners/index"
+
 
 const HomePage = () => {
     return(
-        <CatBg>
+        <>   
+            <CatBg>
+                <Inner>
+                    <Categories />
+                </Inner>    
+            </CatBg>
+
             <Inner>
-                <Categories /> 
-            </Inner>
-        </CatBg>
+                <Baners />
+            </Inner>              
+        </>
     )
 }
 export default HomePage;

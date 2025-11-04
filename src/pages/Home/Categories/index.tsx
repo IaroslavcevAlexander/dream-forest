@@ -1,4 +1,3 @@
-// import { Public } from "@mui/icons-material";
 import type { FC } from "react";
 import { Root, CatItem, Btn } from "./styled-component"
 
