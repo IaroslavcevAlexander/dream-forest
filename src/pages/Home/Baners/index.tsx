@@ -1,20 +1,21 @@
 import type { FC } from "react"
 import Baner from "./Baner"
 import type { BanerData } from "./Baner"
-import { Root, BanersWrapper, Title } from "./stiled-component"
+import { Root, BanersWrapper, Title, Line } from "./styled-component"
+import Inner from "../../../components/Inner/Inner"
 
 const data: BanerData[] = [
     {
         id: 1,
         title: 'Новая коллекция ZX',
-        img: 'public/img/legs.svg',
+        img: '/img/legs.svg',
         buttonAlight: 'left',
         buttonBg: 'light',
     },
     {
         id: 2,
         title: '',
-        img: 'public/img/watch.svg',
+        img: '/img/watch.svg',
         buttonAlight: 'right',
         buttonBg: 'dark',
     }
@@ -22,13 +23,19 @@ const data: BanerData[] = [
 
 const Baners: FC= () => {
     return(
-        <Root sx={{ backgroundColor: 'white', padding: '20px' }}>
-            <Title>Рекомендуем</Title>
-            <BanersWrapper>
-                {data.map((value) => {
-                    return <Baner data={value} key={value.id} />
-                })}
-            </BanersWrapper>
+        <Root>
+            <Inner>
+                <Title>
+                    Рекомендуем
+                    <Line/>
+                </Title>
+
+                <BanersWrapper>
+                    {data.map((value) => {
+                        return <Baner data={value} key={value.id} />
+                    })}
+                </BanersWrapper>
+            </Inner>
         </Root>
     )
 }

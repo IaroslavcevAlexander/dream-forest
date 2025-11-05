@@ -1,6 +1,7 @@
 import type { FC } from "react"
-import { BanerWrapper , Btn } from "../Baners/stiled-component"
-import {BanerTitle} from "./stiled-component"
+import { BanerWrapper , Btn } from "./styled-component"
+import {BanerTitle} from "./styled-component"
+// import { Box } from "@mui/material"
 
 export type ButtonAlign = 'left' | 'right'
 export type ButtonColor = 'light' | 'dark'
@@ -21,11 +22,11 @@ const Baner: FC<Props> = ({ data }) => {
     const { title, img, buttonAlight } = data
     
     return(
-            <BanerWrapper  sx={{backgroundImage: `url(${img})`}}>
-                {title && <BanerTitle>{title}</BanerTitle>}
-                
-                <Btn $align={buttonAlight} $backgroundColor={data.buttonBg}>Подробнее</Btn>
-            </BanerWrapper>
+        <BanerWrapper  sx={{backgroundImage: `url(${img})`}}>
+            {title && <BanerTitle>{title}</BanerTitle>}
+            {/* <Box sx={backgrou}></Box> */}
+            <Btn $align={buttonAlight} $backgroundColor={data.buttonBg}>Подробнее</Btn>
+        </BanerWrapper>
     )
 }
 

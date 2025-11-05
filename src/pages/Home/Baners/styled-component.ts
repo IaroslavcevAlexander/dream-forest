@@ -11,13 +11,27 @@ export const BanersWrapper = styled(Box)(() => ({
     gap: '26px',
 }))
 
+export const Title = styled(Box)(() => ({
+    fontWeight: '700',
+    color: '#333333',
+    fontSize: '27px',
+    marginBottom: '65px',
+    marginTop: '80px',   
+}))
+
+export const Line = styled(Box)(() => ({
+    backgroundColor: '#333333',
+    width: '174px',
+    height: '3px',
+    margin: '10px auto 0 auto',
+}))
+
 export const BanerWrapper  = styled(Box)(() => ({
     position: 'relative',
     display: 'flex',
     alignItems: 'flex-end',
     height: '416px',
     width: '100%',
-    marginBottom: '80px',
     backgroundRepeat: 'no-repeat',    
 }))
 
@@ -36,14 +50,6 @@ export const BanerTitle = styled(Box)(() => ({
     wordBreak: 'break-word',
     textAlign: 'left',
     maxWidth: '350px', 
-}))
-
-export const Title = styled(Box)(() => ({
-    fontWeight: '700',
-    color: '#333333',
-    fontSize: '27px',
-    marginBottom: '65px',
-    marginTop: '80px',
 }))
 
 export const Btn = styled(Button)<{ $align?: ButtonAlign, $backgroundColor?: ButtonColor }>(

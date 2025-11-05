@@ -1,5 +1,7 @@
 import type { FC } from "react";
 import { Root, CatItem, Btn } from "./styled-component"
+import Inner from "../../../components/Inner/Inner";
+import { CatsWrapper } from '../Categories/styled-component'
 
 interface CatProps {
     data: Data
@@ -32,10 +34,14 @@ const items = [
 const Categories = () => {
     return(
         <Root>
-            {items.map((value) => {
-                return <Category data={value} key={value.id}/>
-            })}
-        </Root>    
+            <Inner>
+                <CatsWrapper>
+                    {items.map((value) => {
+                        return <Category data={value} key={value.id}/>
+                    })}
+                </CatsWrapper>
+            </Inner>
+        </Root>
     )
 }
 

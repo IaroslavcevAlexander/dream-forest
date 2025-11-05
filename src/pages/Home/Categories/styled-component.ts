@@ -1,6 +1,11 @@
 import { Box, styled, Button } from "@mui/material"
 
 export const Root = styled(Box)(() => ({
+    background: '#FAFAFA',
+    width: '100%',
+}))
+
+export const CatsWrapper = styled(Box)(() => ({
     display: 'flex',
     gap: '21px',
     paddingTop: '82px',
@@ -15,6 +20,9 @@ export const CatItem = styled(Box)(() => ({
     backgroundRepeat: 'no-repeat',
     height: '430px',
     width: '100%',
+    '&:nth-of-type(2)': {
+        boxShadow: '0px 0px 15px 10px #0000000D',
+    },
 }))
 
 export const Btn = styled(Button)(() => ({
