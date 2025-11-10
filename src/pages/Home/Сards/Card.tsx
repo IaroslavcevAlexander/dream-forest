@@ -1,6 +1,7 @@
 import { BtnWrapper, CadrWrapper, Desc, DescWrapper, ImgCard, Name, Price } from "./styled-component"
 import type { FC } from "react"
 import { Btn } from "../Сards/styled-component"
+import { Box } from "@mui/material"
 
 interface CardData {
     id: number
@@ -24,7 +25,6 @@ interface Price {
 
 interface Buttons {
     status: boolean
-    img: string
 }
 
 interface Props {
@@ -37,18 +37,18 @@ const Card: FC<Props> = ({ data }) => {
         <CadrWrapper>
             <BtnWrapper>
                 <Btn active={inCart.status}>
-                    <img src={inCart.img} alt="cart" />
+                    <Box component='img' src="/img/icons/bag icons min.svg" alt="cart" />
                 </Btn>
                 <Btn active={isFavorite.status}>
-                    <img src={isFavorite.img} alt="favorite" />
+                    <Box component='img' src="/img/icons/heart favorites min.svg" alt="favorite" />
                 </Btn>
             </BtnWrapper>
 
-            <ImgCard><img src={img} alt={name} /></ImgCard>
+            <ImgCard><Box component='img' src={img} alt={name} /></ImgCard>
 
             <DescWrapper>
-                <Name>{name},{color}</Name>
-                <Desc>{watchCase},{weight},{material},{memory}</Desc>
+                <Name>{[name, color].filter(Boolean).join(', ')}</Name>
+                <Desc>{[watchCase, weight, material, memory].filter(Boolean).join(', ')}</Desc>
                 <Price>
                     {oldPrice && typeof oldPrice !== 'number' && (
                         <span style={{ textDecoration: 'line-through', marginRight: 5, color: '#C90D0D' }}>

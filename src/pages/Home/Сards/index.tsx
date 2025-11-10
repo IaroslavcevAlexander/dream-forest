@@ -5,7 +5,6 @@ import { Title } from "../Сards/styled-component"
 import { Line } from "../Baners/styled-component"
 import Card from "../Сards/Card"
 import { data } from "../Сards/data"
-import Brands from "./Brands"
 
 
 const Cards: FC= () => {
@@ -22,8 +21,6 @@ const Cards: FC= () => {
                         return <Card data={value} key={value.id} />
                     })}
                 </CardsWrapper>
-
-                <Brands />
             </Inner>
         </Root>
     )

@@ -13,8 +13,6 @@ export const CardsWrapper = styled(Box)(() => ({
 }))
 
 export const CadrWrapper = styled(Box)(() => ({
-    width: '280px',
-    margin: '0 auto',
     boxShadow: '0px 1px 30px 1px #0000000D',
 }))
 

@@ -1,39 +1,16 @@
-import { Box, IconButton, styled } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { Box, IconButton } from "@mui/material";
 import Inner from "../../../Inner/Inner";
 import { useNavigate } from "react-router-dom";
+import { First, Last, MenuWrapper, Root, StyledLink } from "./styled-component";
+import Menu from "./Menu"
+import { data as categories } from "../Header/data";
+import { useState } from "react";
 
 
-const Root = styled(Box)(({ theme }) => ({
-    color: theme.palette.common.white,
-}))
-
-const First = styled(Box)(() => ({
-    display: "flex",
-    alignItems: "center", 
-    gap: "30px",
-}))
-
-const Last = styled(Box)(() => ({
-    display: "flex",
-    alignItems: "center",  
-    gap: "30px",
-    fontWeight: 400,
-}))
-
-const StyledLink = styled(Box)(({ theme }) => ({
-    textDecoration: 'none',
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    color: theme.palette.common.black,
-    fontWeight: 400,
-    gap: '8px',
-}))
 
 const Header = () => {
     const navigate = useNavigate();
+    const [open, setOpen] = useState(false);
 
     return(
         <Root>
@@ -50,17 +27,29 @@ const Header = () => {
                     onClick={() => navigate("/")}
                     />
 
-                    <IconButton
-                        sx={{
-                            background: '#F6F6F6',
-                            width: "75px",
-                            height: "70px",
-                            borderRadius: "0",
-                            padding: '0px',
-                        }}
+                    <Box
+                        onMouseOver={() => setOpen(true)}
+                        onMouseOut={() => setOpen(false)}
                     >
-                        <MenuIcon />
-                    </IconButton>
+                        <IconButton
+                            sx={{
+                                background: '#F6F6F6',
+                                width: "75px",
+                                height: "70px",
+                                borderRadius: "0",
+                                padding: '0px',
+                            }}
+                        >   
+
+                            <Box component="img" src="/img/icons/menu burger.svg" alt="menu" />
+
+                        </IconButton>
+                        {open && (      
+                            <MenuWrapper>
+                                <Menu data={ categories }/>   
+                            </MenuWrapper>
+                        )}  
+                    </Box>
                 </First>
 
                 <Box component="input" type="text" placeholder="Поиск..." style={{

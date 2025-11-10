@@ -11,11 +11,9 @@ export const data = [
         },
         isFavorite: {
             status: true,
-            img: '/img/icons/heart favorites min.svg'
         },
         inCart: {
             status: false,
-            img: '/img/icons/bag icons min.svg'
         },
         img: '/img/watch1.svg',
     },
@@ -36,11 +34,9 @@ export const data = [
         },
         isFavorite: {
             status: false,
-            img: '/img/icons/heart favorites min.svg'
         },
         inCart: {
             status: false,
-            img: '/img/icons/bag icons min.svg'
         },
         img: '/img/watch2.svg',
         memory: '64GB'
@@ -56,14 +52,11 @@ export const data = [
         },
         isFavorite: {
             status: false,
-            img: '/img/icons/heart favorites min.svg'
         },
         inCart: {
             status: false,
-            img: '/img/icons/bag icons min.svg'
         },
-        // img: '/img/watch3.svg',
-        img: '/img/watch2.svg',
+        img: '/img/watch3.svg',
     },
     {
         id: 4,
@@ -76,11 +69,9 @@ export const data = [
         },
         isFavorite: {
             status: false,
-            img: '/img/icons/heart favorites min.svg'
         },
         inCart: {
             status: true,
-            img: '/img/icons/bag icons min.svg'
         },
         img: '/img/watch4.svg',
     },
@@ -96,11 +87,9 @@ export const data = [
         },
         isFavorite: {
             status: true,
-            img: '/img/icons/heart favorites min.svg'
         },
         inCart: {
             status: false,
-            img: '/img/icons/bag icons min.svg'
         },
         img: '/img/watch1.svg',
     },
@@ -121,11 +110,9 @@ export const data = [
         },
         isFavorite: {
             status: false,
-            img: '/img/icons/heart favorites min.svg'
         },
         inCart: {
             status: false,
-            img: '/img/icons/bag icons min.svg'
         },
         img: '/img/watch2.svg',
         memory: '64GB'
@@ -141,13 +128,11 @@ export const data = [
         },
         isFavorite: {
             status: false,
-            img: '/img/icons/heart favorites min.svg'
         },
         inCart: {
             status: false,
-            img: '/img/icons/bag icons min.svg'
         },
-        img: '/img/watch1.svg',
+        img: '/img/watch3.svg',
     },
     {
         id: 8,
@@ -160,11 +145,9 @@ export const data = [
         },
         isFavorite: {
             status: false,
-            img: '/img/icons/heart favorites min.svg'
         },
         inCart: {
             status: true,
-            img: '/img/icons/bag icons min.svg'
         },
         img: '/img/watch4.svg',
     },

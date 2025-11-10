@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, MenuItem } from "@mui/material";
 import styled from "styled-components";
 
 export const Root = styled(Box)(() => ({
@@ -7,3 +7,34 @@ export const Root = styled(Box)(() => ({
     color: '#333333',
 }))
 
+export const SubFootWrapper = styled(Box)(() => ({
+    display: 'flex',
+    justifyContent: 'space-between',
+}))
+
+export const Item = styled(MenuItem)(() => ({
+    display: 'flex',
+    padding: '19px 0 19.50px 0',
+    fontWeight: '700 !important',
+    color: '#333333',
+}))
+
+export const SubItem = styled(MenuItem)(() => ({
+    display: 'flex',
+    padding: '19px 0 19.50px 0 !important',
+    fontWeight: '700',
+    color: '#333333',
+}))
+
+export const SubItemWrapper = styled(Box)(() => ({
+    display: 'flex',
+    alignItems: 'center',
+}))
+
+export const Line = styled(Box)(() => ({
+    display: 'flex',
+    width: '1px',
+    height: '13px',
+    backgroundColor: '#9A9A9A',
+    margin: '0 8px', 
+}))
