@@ -1,16 +1,22 @@
 import { Box, IconButton } from "@mui/material";
 import Inner from "../../../Inner/Inner";
 import { useNavigate } from "react-router-dom";
-import { First, Last, MenuWrapper, Root, StyledLink } from "./styled-component";
+import { First, Last, Root, StyledLink } from "./styled-component";
 import Menu from "./Menu"
-import { data as categories } from "../Header/data";
+import { data as categories } from "../Header/Menu/data";
+import { data as cart } from "../Header/CartDrop/data";
+
 import { useState } from "react";
+import CartDrop from "./CartDrop";
+import { MenuWrapper } from "./Menu/styled-components";
+import { CartDropWrapper } from "./CartDrop/styled-component";
 
 
 
 const Header = () => {
     const navigate = useNavigate();
-    const [open, setOpen] = useState(false);
+    const [openMenu, setOpenMenu] = useState(false);
+    const [cartOpen, setCartOpen] = useState(false)
 
     return(
         <Root>
@@ -28,8 +34,8 @@ const Header = () => {
                     />
 
                     <Box
-                        onMouseOver={() => setOpen(true)}
-                        onMouseOut={() => setOpen(false)}
+                        onMouseOver={() => setOpenMenu(true)}
+                        onMouseOut={() => setOpenMenu(false)}
                     >
                         <IconButton
                             sx={{
@@ -44,7 +50,7 @@ const Header = () => {
                             <Box component="img" src="/img/icons/menu burger.svg" alt="menu" />
 
                         </IconButton>
-                        {open && (      
+                        {openMenu && (      
                             <MenuWrapper>
                                 <Menu data={ categories }/>   
                             </MenuWrapper>
@@ -76,10 +82,20 @@ const Header = () => {
                             <Box>Избранное</Box>
                     </StyledLink>
 
-                    <StyledLink>
-                            <Box component="img" src="img/icons/shopping cart.svg" alt="Profile" />
-                            <Box>Корзина</Box>
+                    <StyledLink
+                        onMouseOver={() => setCartOpen(true)}
+                        onMouseOut={() => setCartOpen(false)}
+                    >
+
+                        <Box component="img" src="img/icons/shopping cart.svg" alt="Profile" />
+                        <Box>Корзина</Box>
                     </StyledLink>
+                        {cartOpen && (
+                            <CartDropWrapper
+                            >
+                                <CartDrop data={ cart }/>
+                            </CartDropWrapper>
+                        )}
                 </Last>
             </Inner>
         </Root>
