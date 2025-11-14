@@ -17,6 +17,7 @@ export const Item = styled(MenuItem)(() => ({
     padding: '19px 0 19.50px 0',
     fontWeight: '700 !important',
     color: '#333333',
+    borderRadius: '30px important',
 }))
 
 export const SubItem = styled(MenuItem)(() => ({
@@ -24,6 +25,7 @@ export const SubItem = styled(MenuItem)(() => ({
     padding: '19px 0 19.50px 0 !important',
     fontWeight: '700',
     color: '#333333',
+    borderRadius: '30px important',
 }))
 
 export const SubItemWrapper = styled(Box)(() => ({

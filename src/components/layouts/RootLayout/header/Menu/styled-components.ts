@@ -28,11 +28,12 @@ export const SubItem = styled(Box)(() => ({
 
 export const SubBox = styled(Box)(() => ({
     color: '#000000',
-    padding: '30px 0 21px 30px',
+    padding: '15px 0 0 30px',
     fontWeight: '700',
     fontSize: '12px',
     textTransform: 'uppercase',
-    cursor: 'default',  
+    cursor: 'default',
+    marginTop: '15px',  
 }))
 
 export const BanerItem = styled(Box)(() => ({

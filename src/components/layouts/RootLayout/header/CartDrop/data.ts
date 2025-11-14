@@ -29,4 +29,14 @@ export const data: CartDropData[] = [
         currency: '€',
         quantity: 2,
     },
+    {
+        id: 2,
+        img: '/img/21838958-1-grey (1) 1.svg',
+        name: 'adidas Originals Ozweego trainers in grey',
+        size: '43',
+        price: 199,
+        currency: '€',
+        quantity: 1,
+        color: 'серый',
+    },
 ]

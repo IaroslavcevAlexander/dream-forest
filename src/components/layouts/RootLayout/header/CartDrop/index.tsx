@@ -1,6 +1,7 @@
 import { Box } from "@mui/material"
 import type { FC } from "react"
-import { Img, Items, ItemWrapper, Size, Title, Price, PriceWrapper } from "./styled-component"
+import { Img, Items, ItemWrapper, Size, Title, Price, PriceWrapper, BtnWrapper, Btn, TotalPrice, DownPanel } from "./styled-component"
+import { Item } from "../styled-component"
 
 export interface CartDropData {
     id: number
@@ -19,25 +20,40 @@ interface Props {
 
 const CartDrop: FC<Props> = ({ data }) => {
 
+    const total = data.reduce((accumulator, item) => item.price + accumulator * 19.61, 0)
+
     return(
         <>
-            {data.map((cart) => (
-                <ItemWrapper
-                    key={cart.id}
-                >
+            <ItemWrapper>
+                {data.map((cart) => (
+                    <Item
+                        key={cart.id}
+                    >
 
-                    <Img src={cart.img} alt={cart.name} />
+                        <Img src={cart.img} alt={cart.name} />
 
-                    <Items>
-                        <Title>{cart.name}</Title>
-                        <Size>размер: {cart.size}</Size>
-                        <PriceWrapper>
-                            <Price>{cart.price} {cart.currency}</Price>
-                            <Box> {`-`} {cart.quantity}</Box>
-                        </PriceWrapper>
-                    </Items>
-                </ItemWrapper>
-            ))}
+                        <Items>
+                            <Title>{cart.name}</Title>
+                            <Size>размер: {cart.size} цвет: {cart.color}</Size>
+                            <PriceWrapper>
+                                <Price>{cart.price} {cart.currency}</Price>
+                                <Box>{`⠀-⠀`}{cart.quantity}</Box>
+                            </PriceWrapper>
+                        </Items>
+                    </Item>
+                ))}
+            </ItemWrapper>         
+
+            <DownPanel>
+                <TotalPrice>
+                    <Box sx={{fontWeight: '600', fontSize: '16px',}}>всего:</Box>⠀{total.toLocaleString()}MDL
+                </TotalPrice>
+
+                <BtnWrapper>
+                    <Btn>В корзину</Btn>
+                    <Btn sx={{backgroundColor: '#347853 !important', color: '#FFFFFF !important'}}>Оформить</Btn>
+                </BtnWrapper>
+            </DownPanel>
         </>
     )
 }

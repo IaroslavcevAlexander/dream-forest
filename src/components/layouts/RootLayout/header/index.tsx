@@ -82,20 +82,26 @@ const Header = () => {
                             <Box>Избранное</Box>
                     </StyledLink>
 
-                    <StyledLink
+                    <Box
                         onMouseOver={() => setCartOpen(true)}
                         onMouseOut={() => setCartOpen(false)}
                     >
+                        <StyledLink>
+                            <Box
+                                component="img"
+                                src="img/icons/shopping cart.svg"
+                                alt="Cart"
+                            />
+                            
+                            <Box>Корзина</Box>
+                        </StyledLink>
 
-                        <Box component="img" src="img/icons/shopping cart.svg" alt="Profile" />
-                        <Box>Корзина</Box>
-                    </StyledLink>
                         {cartOpen && (
-                            <CartDropWrapper
-                            >
-                                <CartDrop data={ cart }/>
-                            </CartDropWrapper>
+                        <CartDropWrapper>
+                            <CartDrop data={cart} />
+                        </CartDropWrapper>
                         )}
+                    </Box>
                 </Last>
             </Inner>
         </Root>

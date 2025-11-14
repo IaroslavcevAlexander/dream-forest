@@ -32,4 +32,5 @@ export const StyledMenuItem = styled(MenuItem)(() => ({
     fontSize: '14px',
     paddingLeft: '0 !important',
     color: '#FAFAFA !important',
+    borderRadius: '30px important',
 }))

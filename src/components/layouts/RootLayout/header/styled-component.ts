@@ -27,6 +27,7 @@ export const StyledLink = styled(Box)(({ theme }) => ({
     color: theme.palette.common.black,
     fontWeight: 400,
     gap: '8px',
+    margin: '0',
 }))
 
 export const Item = styled(Box)(() => ({
