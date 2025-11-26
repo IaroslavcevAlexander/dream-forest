@@ -90,14 +90,16 @@ export const BtnWrapper = styled(Box)(() => ({
     alignItems: 'center',
     justifyContent: 'center',
     gap: '15px',
-    margin: '13px 0',
+    margin: '20px 0',
 }))
 
 export const Btn = styled(Button)(() => ({
     borderRadius: '30px !important',
-    fontWeight: '400',
-    fontSize: '10px',
+    fontWeight: '600 !important',
+    fontSize: '10px !important',
     backgroundColor: 'white !important',
-    padding: '11px 18px !important',
-    color: '#333333 !important',
+    padding: '11px 17px !important',
+    color: '#333333 !important',  
+    letterSpacing: '1px !important',
+    lineHeight: '10px !important'
 }))

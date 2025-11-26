@@ -1,5 +1,5 @@
 import type { FC } from "react"
-import { BrendWrapper, BrandLogo } from "./styled-component"
+import { BrandLogo, BrandWrapper } from "./styled-component"
 
 
 interface BrandData {
@@ -16,9 +16,9 @@ const Brand: FC<Props>= ({ data }) => {
     const { img, name } = data
 
     return(
-        <BrendWrapper>
-            <BrandLogo><img src={img} alt={name} /></BrandLogo>
-        </BrendWrapper>
+        <BrandWrapper>
+            <BrandLogo src={img} alt={name} />
+        </BrandWrapper>
     )
 }
 

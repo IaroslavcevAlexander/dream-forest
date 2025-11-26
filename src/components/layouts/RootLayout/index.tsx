@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import HeaderTop from "./Header/HeaderTop/index";
 import Header from "./Header/index";
 import Footer from "./Footer";
+import { data } from "./Footer/data";
 
 interface Props {
     children: JSX.Element
@@ -16,7 +17,7 @@ const Layout: FC<Props> = ({ children }) => {
             <Header />
             <Outlet />
             {children}
-            <Footer />
+            <Footer data={data}/>
         </Fragment>
     )
 }

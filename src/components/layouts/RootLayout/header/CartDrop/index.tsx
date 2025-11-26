@@ -37,7 +37,7 @@ const CartDrop: FC<Props> = ({ data }) => {
                             <Size>размер: {cart.size} цвет: {cart.color}</Size>
                             <PriceWrapper>
                                 <Price>{cart.price} {cart.currency}</Price>
-                                <Box>{`⠀-⠀`}{cart.quantity}</Box>
+                                <Box>{`⠀-⠀`}{cart.quantity}шт</Box>
                             </PriceWrapper>
                         </Items>
                     </Item>
@@ -46,7 +46,7 @@ const CartDrop: FC<Props> = ({ data }) => {
 
             <DownPanel>
                 <TotalPrice>
-                    <Box sx={{fontWeight: '600', fontSize: '16px',}}>всего:</Box>⠀{total.toLocaleString()}MDL
+                        <Box sx={{fontWeight: '600', fontSize: '16px',}}>всего:</Box><Box>⠀{total.toLocaleString()}MDL</Box>
                 </TotalPrice>
 
                 <BtnWrapper>

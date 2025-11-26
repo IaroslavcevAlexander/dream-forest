@@ -11,21 +11,6 @@ export const BanersWrapper = styled(Box)(() => ({
     gap: '26px',
 }))
 
-export const Title = styled(Box)(() => ({
-    fontWeight: '700',
-    color: '#333333',
-    fontSize: '27px',
-    marginBottom: '65px',
-    marginTop: '80px',   
-}))
-
-export const Line = styled(Box)(() => ({
-    backgroundColor: '#333333',
-    width: '174px',
-    height: '3px',
-    margin: '10px auto 0 auto',
-}))
-
 export const BanerWrapper  = styled(Box)(() => ({
     position: 'relative',
     display: 'flex',

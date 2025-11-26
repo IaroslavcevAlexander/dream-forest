@@ -6,19 +6,25 @@ import theme from './config/theme'
 import Router from './config/router'
 import globalStyles from './config/globalStyle'
 import { GlobalStyles } from '@mui/material'
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
-const App: FC = () => {
+export const App: FC = () => {
   return(
-    <ThemeProvider theme={theme}>
-      <GlobalStyles styles={globalStyles} />
-      <RouterProvider router = {Router} />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles styles={globalStyles} />
+        <RouterProvider router = {Router} />
+      </ThemeProvider>
+    </Provider>
   ) 
 } 
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <Provider store={store}>
+    <StrictMode>
+      <App />
+    </StrictMode>
+  </Provider>
 )
 

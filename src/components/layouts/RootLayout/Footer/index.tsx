@@ -1,54 +1,66 @@
-import { Box } from "@mui/material"
+import type { FC } from "react"
 import Inner from "../../../Inner/Inner"
-import { FooterWrapper, ItemWrapper, Root, StyledMenuItem, Title } from "./styled-component"
+import { Email, FooterItem, FooterItemWrapper, FooterWrapper, ImgEmailWrapper, Root, Tel, Title, } from "./styled-component"
 import SubFooter from "./SubFooter"
+import { Box } from "@mui/material"
 
-const Footer = () => {
+interface FooterData  {
+    id: number
+    name: string
+    items: Items[]
+}
+
+interface Items {
+    id: number
+    name?: string
+    img?: string
+    email?: string
+    tel?: string
+}
+
+interface Props {
+    data: FooterData[]
+}
+
+const Footer: FC<Props>= ({ data }) => {
     return(
         <Root>
             <Inner>
                 <FooterWrapper>
-                    <ItemWrapper>
-                        <Title>Категории</Title>
+                    {data.map((item) =>
+                        <FooterItemWrapper key={item.id}>
+                            <Title>{item.name}</Title>
 
-                        <StyledMenuItem>Обувь</StyledMenuItem>
-                        <StyledMenuItem>Одежда</StyledMenuItem>
-                        <StyledMenuItem>Аксессуары</StyledMenuItem>
-                    </ItemWrapper>
+                            {item.items.map((items) => (
+                                <Box key={items.id}>
+                                    <FooterItem>
+                                        {items.name && (
+                                            <Box>{items.name}</Box>
+                                        )}
 
-                    <ItemWrapper>
-                        <Title>Информация</Title>
+                                        <ImgEmailWrapper href={`mailto:${items.email}`}>
+                                            {items.img && (
+                                                <Box component={'img'} src={items.img} alt={items.name} />
+                                            )}
 
-                        <StyledMenuItem>О нас</StyledMenuItem>
-                        <StyledMenuItem>Оплата</StyledMenuItem>
-                        <StyledMenuItem>Оформление заказа</StyledMenuItem>
-                        <StyledMenuItem>Доставка</StyledMenuItem>
-                        <StyledMenuItem>Нужна помощь</StyledMenuItem>
-                    </ItemWrapper>
+                                            {items.email && (
+                                                <Email>
+                                                    {items.email}
+                                                </Email>
+                                            )}
+                                        </ImgEmailWrapper>
 
-                    <ItemWrapper>
-                        <Title>Мой Аккаунт</Title>
-
-                        <StyledMenuItem>Корзина</StyledMenuItem>
-                        <StyledMenuItem>Избранное</StyledMenuItem>
-                        <StyledMenuItem>Мои заказы</StyledMenuItem>
-                    </ItemWrapper>
-
-                    <ItemWrapper>
-                        <Title>Контакты</Title>
-
-                        <StyledMenuItem>
-                            <Box component={'img'} sx={{ marginRight: '8px', }} src="/img/icons/mail.svg" alt="mail"></Box>
-                            info@dreamforest.md
-                            </StyledMenuItem>
-                        <StyledMenuItem>+(373) 67-114-339</StyledMenuItem>
-
-                        <StyledMenuItem>
-                            <Box component={'img'} src="/img/icons/visa MasterCard.svg" alt="ViSA MasterCard"></Box>
-                        </StyledMenuItem>
-
-                    </ItemWrapper>
-                </FooterWrapper>
+                                        {items.tel  && (
+                                            <Tel href={`tel:${items.tel}`}>
+                                                {items.tel}
+                                            </Tel>
+                                        )}
+                                    </FooterItem>
+                                </Box>
+                            ))}
+                        </FooterItemWrapper>
+                    )}
+               </FooterWrapper>
             </Inner>
 
             <SubFooter />

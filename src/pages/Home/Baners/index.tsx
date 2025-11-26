@@ -1,8 +1,11 @@
 import type { FC } from "react"
 import Baner from "./Baner"
 import type { BanerData } from "./Baner"
-import { Root, BanersWrapper, Title, Line } from "./styled-component"
+import { Root, BanersWrapper } from "./styled-component"
 import Inner from "../../../components/Inner/Inner"
+import { Line } from "../../../components/style-component/Line"
+import { Title } from "../../../components/style-component/Title"
+import { useNavigate } from "react-router-dom";
 
 const data: BanerData[] = [
     {
@@ -22,18 +25,18 @@ const data: BanerData[] = [
 ]
 
 const Baners: FC= () => {
+    const navigate = useNavigate();
+    
     return(
         <Root>
             <Inner>
                 <Title>
                     Рекомендуем
-                    <Line/>
+                    <Line sx={{marginTop: '15px', width: '175px'}}/>
                 </Title>
 
-                <BanersWrapper>
-                    {data.map((value) => {
-                        return <Baner data={value} key={value.id} />
-                    })}
+                <BanersWrapper onClick={() => navigate("/catalog")}>
+                    {data.map((value) => <Baner data={value} key={value.id} />)}
                 </BanersWrapper>
             </Inner>
         </Root>

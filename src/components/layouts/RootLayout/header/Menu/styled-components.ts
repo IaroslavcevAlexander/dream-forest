@@ -5,6 +5,7 @@ export const MenuWrapper = styled(Box)(() => ({
     color: '#333333',
     position: 'absolute',
     width: '196px',
+    zIndex: '1',
 }))
 
 export const CategoryImg = styled('img')(() => ({
@@ -21,6 +22,7 @@ export const SubItemWrapper = styled(Box)(() => ({
     width: '488px',
     cursor: 'auto',
     boxShadow: '-2px 0px 10px 0px #0000000D',
+    paddingBottom: '30px',
 }))
 
 export const SubItem = styled(Box)(() => ({
@@ -37,7 +39,6 @@ export const SubBox = styled(Box)(() => ({
 }))
 
 export const BanerItem = styled(Box)(() => ({
-    marginBottom: '34px',
     marginTop: '34px',
 }))
 

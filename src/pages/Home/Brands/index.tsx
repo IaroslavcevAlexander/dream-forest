@@ -1,5 +1,5 @@
 import Brand from "./Brand"
-import { BrendsWrapper } from "./styled-component"
+import { BrandsWrapper } from "./styled-component"
 
 const data = [
     {
@@ -27,11 +27,9 @@ const data = [
 
 const Brands = () => {
     return(
-        <BrendsWrapper>
-            {data.map((value) => {
-                return <Brand data={value} key={value.id}/>
-            })}
-        </BrendsWrapper>
+        <BrandsWrapper>
+            {data.map((value) => <Brand data={value} key={value.id}/>)}
+        </BrandsWrapper>
     )
 }
 

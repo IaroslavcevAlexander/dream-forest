@@ -28,6 +28,8 @@ export const CatItem = styled(Box)(() => ({
 export const Btn = styled(Button)(() => ({
     borderRadius: '50px',
     backgroundColor: 'white',
+    fontWeight: '700',
+    fontSize: '12px',
     color: 'black',
     height: '45px',
     margin: '0 0 30px 30px',

@@ -18,7 +18,6 @@ interface Subcategories {
     name?: string
     title?: string
     subcategories?: Subcategories[]
-    baner?: BanerData
 }
 
 interface Props {

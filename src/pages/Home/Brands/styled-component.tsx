@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Box } from "@mui/material";
 
-export const BrendsWrapper = styled(Box)(() => ({
+export const BrandsWrapper = styled(Box)(() => ({
     display: 'flex',
     justifyContent: 'center',
     gap: '20px',
@@ -10,7 +10,7 @@ export const BrendsWrapper = styled(Box)(() => ({
     marginBottom: '80px',
 }))
 
-export const BrendWrapper = styled(Box)(() => ({
+export const BrandWrapper = styled(Box)(() => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -21,5 +21,5 @@ export const BrendWrapper = styled(Box)(() => ({
     backgroundPosition: 'center',
 }))
 
-export const BrandLogo = styled(Box)(() => ({
+export const BrandLogo = styled('img')(() => ({
 }))

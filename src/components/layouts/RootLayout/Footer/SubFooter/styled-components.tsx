@@ -1,4 +1,4 @@
-import { Box, MenuItem } from "@mui/material";
+import { Box } from "@mui/material";
 import styled from "styled-components";
 
 export const Root = styled(Box)(() => ({
@@ -12,7 +12,7 @@ export const SubFootWrapper = styled(Box)(() => ({
     justifyContent: 'space-between',
 }))
 
-export const Item = styled(MenuItem)(() => ({
+export const Item = styled(Box)(() => ({
     display: 'flex',
     padding: '19px 0 19.50px 0',
     fontWeight: '700 !important',
@@ -20,7 +20,7 @@ export const Item = styled(MenuItem)(() => ({
     borderRadius: '30px important',
 }))
 
-export const SubItem = styled(MenuItem)(() => ({
+export const SubItem = styled(Box)(() => ({
     display: 'flex',
     padding: '19px 0 19.50px 0 !important',
     fontWeight: '700',

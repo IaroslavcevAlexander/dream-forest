@@ -2,6 +2,7 @@ import type { FC } from "react";
 import { Root, CatItem, Btn } from "./styled-component"
 import Inner from "../../../components/Inner/Inner";
 import { CatsWrapper } from '../Categories/styled-component'
+import { useNavigate } from "react-router-dom";
 
 interface CatProps {
     data: Data
@@ -32,13 +33,15 @@ const items = [
 ]
 
 const Categories = () => {
+    const navigate = useNavigate();
+
     return(
         <Root>
             <Inner>
-                <CatsWrapper>
-                    {items.map((value) => {
-                        return <Category data={value} key={value.id}/>
-                    })}
+                <CatsWrapper
+                    onClick={() => navigate("/catalog")}
+                >
+                    {items.map((value) => <Category data={value} key={value.id}/>)}
                 </CatsWrapper>
             </Inner>
         </Root>
