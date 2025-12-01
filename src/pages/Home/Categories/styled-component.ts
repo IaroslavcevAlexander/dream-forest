@@ -1,7 +1,7 @@
 import { Box, styled, Button } from "@mui/material"
 
-export const Root = styled(Box)(() => ({
-    background: '#FAFAFA',
+export const Root = styled(Box)(({ theme }) => ({
+    background: theme.palette.secondary.contrastText,
     width: '100%',
 }))
 
@@ -25,7 +25,7 @@ export const CatItem = styled(Box)(() => ({
     },
 }))
 
-export const Btn = styled(Button)(() => ({
+export const Btn = styled(Button)(({ theme }) => ({
     borderRadius: '50px',
     backgroundColor: 'white',
     fontWeight: '700',
@@ -46,7 +46,7 @@ export const Btn = styled(Button)(() => ({
         backgroundImage: 'url("/img/right-arrow 2.svg")'
     },
     ':hover': {
-        backgroundColor: '#C3A578',
+        backgroundColor: theme.palette.primary.main,
         color: 'white',
         '&::after': {
             backgroundImage: 'url("/img/right-arrow 1.svg")'

@@ -1,31 +1,17 @@
 import type { FC } from "react"
 import Baner from "./Baner"
-import type { BanerData } from "./Baner"
 import { Root, BanersWrapper } from "./styled-component"
 import Inner from "../../../components/Inner/Inner"
 import { Line } from "../../../components/style-component/Line"
 import { Title } from "../../../components/style-component/Title"
 import { useNavigate } from "react-router-dom";
-
-const data: BanerData[] = [
-    {
-        id: 1,
-        title: 'Новая коллекция ZX',
-        img: '/img/legs.svg',
-        buttonAlight: 'left',
-        buttonBg: 'light',
-    },
-    {
-        id: 2,
-        title: '',
-        img: '/img/watch.svg',
-        buttonAlight: 'right',
-        buttonBg: 'dark',
-    }
-]
+import { useGetBannersQuery } from "../../../redux/api/baners/api"
 
 const Baners: FC= () => {
     const navigate = useNavigate();
+    const { data, isLoading } = useGetBannersQuery();
+    console.log(data);
+    if (!data || isLoading) return null 
     
     return(
         <Root>
@@ -36,7 +22,7 @@ const Baners: FC= () => {
                 </Title>
 
                 <BanersWrapper onClick={() => navigate("/catalog")}>
-                    {data.map((value) => <Baner data={value} key={value.id} />)}
+                    {data.data.map((value) => <Baner key={value.id} {...value} />)}
                 </BanersWrapper>
             </Inner>
         </Root>

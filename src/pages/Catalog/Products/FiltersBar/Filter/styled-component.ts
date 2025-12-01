@@ -4,6 +4,7 @@ export const FiltersWrapper = styled(Box)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     marginTop: '9px',
+    paddingRight: '21px',
     backgroundColor: theme.palette.common.white,
 }))
 

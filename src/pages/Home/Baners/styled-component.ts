@@ -1,9 +1,10 @@
 import { Box, Button, styled } from "@mui/material"
-import type { ButtonAlign, ButtonColor } from "./Baner"
+import type { ButtonAlign, ButtonBg } from "../../../redux/api/baners/types"
 
-export const Root = styled(Box)(() => ({
+
+export const Root = styled(Box)(({ theme }) => ({
     textAlign: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: theme.palette.common.white,
 }))
 
 export const BanersWrapper = styled(Box)(() => ({
@@ -20,13 +21,13 @@ export const BanerWrapper  = styled(Box)(() => ({
     backgroundRepeat: 'no-repeat',    
 }))
 
-export const BanerTitle = styled(Box)(() => ({
+export const BanerTitle = styled(Box)(({ theme }) => ({
     position: 'absolute',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'start',
     fontWeight: '800',
-    color: '#FFFFFF',
+    color: theme.palette.common.white,
     fontSize: '30px',
     marginLeft: '50px',
     bottom: '122px',
@@ -37,20 +38,24 @@ export const BanerTitle = styled(Box)(() => ({
     maxWidth: '350px', 
 }))
 
-export const Btn = styled(Button)<{ $align?: ButtonAlign, $backgroundColor?: ButtonColor }>(
-    ({ $align, $backgroundColor }) => ({
+export const Btn = styled(Button)<{ $align?: ButtonAlign, $backgroundColor?: ButtonBg }>(
+    ({ $align, $backgroundColor, theme }) => ({
     position: 'absolute',
     display: 'flex',
     bottom: "50px",
     borderRadius: "50px",
-    height: "45px",
-    padding: "0 35px",
+    padding: "15px 35px",
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    fontSize: '12px',
+    lineHeight: '12px',
+    font: 'Futura PT',
     ...( $align === "right" 
       ? { right: "50px" } 
       : { left: "50px" }
     ),
-    ...( $backgroundColor === "light"
-        ? { backgroundColor: 'white', color: 'black' }
-        : { backgroundColor: '#333333', color: 'white' }
+    ...( $backgroundColor === "white"
+        ? { backgroundColor: theme.palette.common.white, color: theme.palette.text.primary }
+        : { backgroundColor: theme.palette.text.primary, color: theme.palette.common.white }
     )
 }))

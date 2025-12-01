@@ -5,18 +5,16 @@ import { BtnSort, BtnSortWrapper, CardsWrapper, FilterResult, FiltersCards, Pagi
 import { Box } from "@mui/material"
 import { filters } from "./filters.data.ts"
 import { Btn } from "../styled-component.ts"
-import Paging from "./Paging/index.tsx"
+import Paging from "./Pagination/index.tsx"
 
 
-const CatalogCardsProducts = () => {
+const CardsProducts = () => {
     const [open, setOpen] = useState(false)
     const [active, setActive] = useState("Все")
     const [sortActiv, setSortActive] = useState("По цене вверх")
     const sortRef = useRef<HTMLDivElement>(null)
     const originalData = data
     const [products, setProducts] = useState(originalData)
-
-
     const [page, setPage] = useState(1)
     const itemsPerPage = 9
     const startIndex = (page - 1) * itemsPerPage
@@ -56,10 +54,11 @@ const CatalogCardsProducts = () => {
             <Box>
                 <FiltersCards>
                     {filters.map((filter) => (
-                        <Btn
+                        <Btn    
                         key={filter}
                         onClick={() => setActive(filter)}
                         $active={active === filter}
+                        $size="medium"
                         >
                             {filter}
                         </Btn>
@@ -114,4 +113,4 @@ const CatalogCardsProducts = () => {
     )
 }
 
-export default CatalogCardsProducts
+export default CardsProducts

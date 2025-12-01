@@ -1,5 +1,4 @@
-import { Box, IconButton } from "@mui/material"
-import { styled } from "@mui/material/styles";
+import { Box, IconButton, styled } from "@mui/material"
 
 export const Root = styled(Box)(({ theme }) => ({
     color: theme.palette.common.white,
@@ -11,22 +10,6 @@ export const First = styled(Box)(() => ({
     gap: "30px",
     cursor: 'pointer',
 }))
-
-// export const InputSearch = styled('input')(() => ({
-//     display: "flex",
-//     alignItems: "center", 
-//     gap: "30px",
-//     height: '36px',
-//     width: '100%',
-//     marginLeft: '15px',
-//     border: '1px solid',
-//     borderRadius: '20px', 
-//     borderColor: '#ECECEC',
-//     color: '#BABABA',
-//     fontSize: '14px',
-//     fontWeight: 400,
-//     paddingLeft: '25px',
-// }))
 
 export const Last = styled(Box)(() => ({
     display: "flex",
@@ -48,18 +31,14 @@ export const StyledLink = styled(Box)(({ theme }) => ({
     margin: '0',
 }))
 
-export const Item = styled(Box)(() => ({
+export const Item = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: theme.palette.common.white,
     padding: "11px 0",
     paddingLeft: '14px',
-    borderBottom: '1px solid',
-    borderColor: '#E7E7E7',
     cursor: 'pointer',
-    '&:hover': {
-        backgroundColor: '#F6F6F6',
-    }
+    color: theme.palette.common.black,
 }))
 
 

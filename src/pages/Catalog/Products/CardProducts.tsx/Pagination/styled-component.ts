@@ -1,7 +1,7 @@
 import { Box, styled } from "@mui/material";
 
 
-export const PagingBox = styled(Box)(() => ({
+export const PaginationBox = styled(Box)(() => ({
     display: 'flex',
     alignItems: 'center',
     gap: '15px',

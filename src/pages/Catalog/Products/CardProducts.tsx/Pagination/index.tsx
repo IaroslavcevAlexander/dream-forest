@@ -1,5 +1,5 @@
 import { Box } from "@mui/material"
-import { PagingBox } from "./styled-component"
+import { PaginationBox } from "./styled-component"
 
 interface Props {
   page: number
@@ -7,11 +7,11 @@ interface Props {
   setPage: React.Dispatch<React.SetStateAction<number>>
 }
 
-const Paging = ({ page, pageCount, setPage }: Props) => {
+const Pagination = ({ page, pageCount, setPage }: Props) => {
     const pages = Array.from({ length: pageCount }, (_, i) => i + 1)
 
     return (
-        <PagingBox>
+        <PaginationBox>
             <Box
             sx={{
                 cursor: page === 1 ? "default" : "pointer",
@@ -58,8 +58,8 @@ const Paging = ({ page, pageCount, setPage }: Props) => {
             </Box>
 
 
-        </PagingBox>
+        </PaginationBox>
     )
 }
 
-export default Paging
+export default Pagination

@@ -1,57 +1,32 @@
-import type { FC } from "react";
 import { Root, CatItem, Btn } from "./styled-component"
 import Inner from "../../../components/Inner/Inner";
 import { CatsWrapper } from '../Categories/styled-component'
 import { useNavigate } from "react-router-dom";
-
-interface CatProps {
-    data: Data
-} 
-
-interface Data {
-    name: string,
-    img: string,
-    id: number,
-}
-
-const items = [
-    {
-        name: "Обувь", 
-        img: "/img/sneaker.svg",
-        id: 1
-    }, 
-    {
-        name: "Одежда", 
-        img: "/img/man-and-woman.svg",
-        id: 2
-    }, 
-    {
-        name: "Акксесуары", 
-        img: "/img/bag.svg",
-        id: 3
-    }
-]
+import { useGetCategoriesQuery } from "../../../redux/api/category/api";
+import type { Category } from "../../../redux/api/category/types";
 
 const Categories = () => {
     const navigate = useNavigate();
+    const { data, isLoading } = useGetCategoriesQuery();
 
+    if (!data || isLoading) return null 
+    
     return(
         <Root>
             <Inner>
                 <CatsWrapper
                     onClick={() => navigate("/catalog")}
                 >
-                    {items.map((value) => <Category data={value} key={value.id}/>)}
+                    {data.data.map((category: Category) => <CategoryItem key={category.id} {...category} />)}
                 </CatsWrapper>
             </Inner>
         </Root>
     )
 }
 
-const Category: FC<CatProps> = ({ data }) => {
-    const {name, img} = data
+const CategoryItem = ({ name, image }: Category) => {
     return(
-        <CatItem sx={{backgroundImage: `url(${img})`}}> 
+        <CatItem sx={{backgroundImage: `url(${image})`}}> 
             <Btn>{name}</Btn>
         </CatItem>    
     )

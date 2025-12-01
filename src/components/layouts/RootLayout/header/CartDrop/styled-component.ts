@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 export const CartDropWrapper = styled(Box)(() => ({
     position: 'absolute',
-    top: '107px !important',
+    top: '100px !important',
     right: '170px',
     width: '270px !important',
     boxShadow: '0px 4px 10px 0px #0000000D',

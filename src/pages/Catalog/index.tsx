@@ -1,7 +1,7 @@
 import { Box } from "@mui/material"
 import CatalogBaner from "./Baner"
 import Nav from "./Nav"
-import CatalogProducts from "./CatalogProducts"
+import CatalogProducts from "./Products"
 
 const Catalog = () => {
     return(

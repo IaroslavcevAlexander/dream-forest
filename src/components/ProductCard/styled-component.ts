@@ -36,6 +36,7 @@ export const Btn = styled(Button)<{ active?: boolean }>(({ active, theme }) => (
 export const ImgCard = styled(Box)(() => ({
     display: 'flex',
     justifyContent: 'center',
+    cursor: 'pointer',
 }))
 
 export const DescWrapper = styled(Box)(() => ({
@@ -47,6 +48,7 @@ export const Name = styled(Box)(() => ({
     color: '#333333',
     fontSize: '16px',
     lineHeight: '22px',
+    cursor: 'pointer',
 }))
 
 export const Desc = styled(Box)(() => ({
