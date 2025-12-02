@@ -1,8 +1,13 @@
 import { BanerImg, BanerWrapper, Desc, DescWrapper, Root, Title } from "./styled-component"
 import Inner from "../../../components/Inner/Inner"
 import { Line } from "../../../components/style-component/Line"
+import type { Category } from "../../../redux/api/category/types";
 
-const CatalogBaner = () => {
+interface BannerProps {
+    category: Category;
+}
+
+const Banner = ({ category }: BannerProps) => {
     return(
         <Root>
             <Inner>
@@ -10,14 +15,15 @@ const CatalogBaner = () => {
 
                     <DescWrapper>
 
-                        <Title>Наручные Часы
+                        <Title> 
+                            {category.name}
                             <Line sx={{width: '190px'}}/>                            
                         </Title>
 
-                        <Desc>Носи время на запястье с нашей подборкой мужских часов, которые можно купить прямо здесь, на Dream<br />Forest.</Desc>
+                        <Desc>{category.description}</Desc>
                     </DescWrapper>
 
-                    <BanerImg src="/img/catalogWatchBaner.svg" alt="Banner" />
+                    <BanerImg src={category.image} alt={category.name} />
 
                 </BanerWrapper>
             </Inner>
@@ -25,4 +31,4 @@ const CatalogBaner = () => {
     )
 }
 
-export default CatalogBaner
+export default Banner

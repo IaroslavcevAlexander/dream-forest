@@ -7,29 +7,41 @@ import type { Category } from "../../../redux/api/category/types";
 
 const Categories = () => {
     const navigate = useNavigate();
-    const { data, isLoading } = useGetCategoriesQuery();
+    const { data, isLoading } = useGetCategoriesQuery()
 
     if (!data || isLoading) return null 
     
     return(
         <Root>
             <Inner>
-                <CatsWrapper
-                    onClick={() => navigate("/catalog")}
-                >
-                    {data.data.map((category: Category) => <CategoryItem key={category.id} {...category} />)}
+                <CatsWrapper>
+                {data.data.map((category: Category) => (
+                    <CategoryItem 
+                    key={category.id} 
+                    {...category} 
+                    onClick={() => navigate(`/catalog/${category.id}`)}
+                    />
+                ))}
                 </CatsWrapper>
             </Inner>
         </Root>
     )
 }
 
-const CategoryItem = ({ name, image }: Category) => {
-    return(
-        <CatItem sx={{backgroundImage: `url(${image})`}}> 
-            <Btn>{name}</Btn>
-        </CatItem>    
-    )
+interface CategoryItemProps extends Category {
+  onClick: () => void
 }
+
+const CategoryItem = ({ name, image, onClick }: CategoryItemProps) => {
+  return (
+    <CatItem 
+      onClick={onClick}
+      sx={{ backgroundImage: `url(${image})` }}
+    >
+      <Btn>{name}</Btn>
+    </CatItem>
+  )
+}
+
 
 export default Categories;

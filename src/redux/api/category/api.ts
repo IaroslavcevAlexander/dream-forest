@@ -6,7 +6,6 @@ export const apiCategory = apiService.injectEndpoints({
     getCategories: build.query<GetCategoryResponse, void>({
       query: () => 'categories',
     }),
-    
   }),
 
   overrideExisting: false,

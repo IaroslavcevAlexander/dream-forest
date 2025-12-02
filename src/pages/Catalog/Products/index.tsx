@@ -3,7 +3,7 @@ import CardsProducts from "./CardProducts.tsx/index.tsx"
 import FiltersBar from "./FiltersBar/index.tsx"
 import { Wrapper, Root } from "./styled-component.ts"
 
-const CatalogProducts = () => {
+const Products = () => {
     return(
         <Root>
             <Inner>
@@ -16,4 +16,4 @@ const CatalogProducts = () => {
     )
 }
 
-export default CatalogProducts
+export default Products

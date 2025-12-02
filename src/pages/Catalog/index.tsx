@@ -1,16 +1,24 @@
 import { Box } from "@mui/material"
-import CatalogBaner from "./Baner"
-import Nav from "./Nav"
-import CatalogProducts from "./Products"
+import Banner from "./Banner"
+// import Nav from "./Nav"
+// import Products from "./Products"
+import { useGetCategoryByIdQuery } from "../../redux/api/catalogPage/api"
+import { useParams } from "react-router-dom"
 
-const Catalog = () => {
-    return(
+const CatalogPage = () => {
+    const { id } = useParams()
+    const { data, isLoading } = useGetCategoryByIdQuery(Number(id))
+
+    if (!data || isLoading) return null
+
+    const category = data.data
+    return (
         <Box>
-            <CatalogBaner />
-            <Nav />
-            <CatalogProducts />
+            <Banner category={category} />
+            {/* <Nav category={category}/>
+            <Products category={category}/> */}
         </Box>
     )
 }
 
-export default Catalog
+export default CatalogPage

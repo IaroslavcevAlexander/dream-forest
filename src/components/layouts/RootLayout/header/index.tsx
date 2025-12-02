@@ -29,7 +29,7 @@ const Header = () => {
             >  
                 <First>
                     <Box component="img" 
-                        src="img/icons/dream forest big.svg" 
+                        src="/img/icons/dream forest big.svg" 
                         alt="logo-dream-forest" 
                         onClick={() => navigate("/")}
                     />
@@ -53,12 +53,12 @@ const Header = () => {
 
                 <Last>
                     <StyledLink>
-                        <Box component="img" src="img/icons/profile icon man.svg" alt="Profile" />
+                        <Box component="img" src="/img/icons/profile icon man.svg" alt="Profile" />
                         <Box>Профиль</Box>
                     </StyledLink>
 
                     <StyledLink>
-                            <Box component="img" src="img/icons/heart favorites.svg" alt="Profile" />
+                            <Box component="img" src="/img/icons/heart favorites.svg" alt="Profile" />
                             <Box>Избранное</Box>
                     </StyledLink>
 
@@ -69,7 +69,7 @@ const Header = () => {
                         <StyledLink>
                             <Box
                                 component="img"
-                                src="img/icons/shopping cart.svg"
+                                src="/img/icons/shopping cart.svg"
                                 alt="Cart"
                             />
                             

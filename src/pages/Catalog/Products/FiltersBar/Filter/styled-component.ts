@@ -72,6 +72,13 @@ export const StrapTypeWrapper = styled(Box)(() => ({
 
 export const StyledCheckbox = styled(Checkbox)(({ theme }) => ({
     color: theme.palette.secondary.main,
+    fontFamily: 'Futura PT !important',
+    fontWeight: '400',
+    fontSize: '16px',
+    leadingTrim: 'NONE',
+    lineHeight: '26px',
+    letterSpacing: '0%',
+    verticalAlign: 'middle',
 
     '&:hover': {
         backgroundColor: 'transparent !important',

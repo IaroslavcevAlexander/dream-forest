@@ -2,31 +2,10 @@ import type { FC } from "react"
 import { Box } from "@mui/material"
 import { Btn, BtnWrapper, Desc, DescWrapper, ImgCard, Name, ProductCadrWrapper } from "./styled-component"
 import PriceBlock from "../../pages/Home/Products/PriceBlock"
-
-interface CardData {
-    id: number
-    name: string
-    description: string[]
-    color?: string
-    isFavorite: Buttons
-    inCart: Buttons
-    img: string
-    memory?: string
-    price: Price
-    oldPrice?: Price | number
-}
-
-interface Price {
-    quantity: number
-    currency: string
-}
-
-interface Buttons {
-    status: boolean
-}
+import type { Product } from "../../redux/api/product/types"
 
 interface Props {
-    data: CardData
+    data: Product
 }
 
 const ProductCard: FC<Props> = ({ data }) => {

@@ -34,6 +34,7 @@ export const Btn = styled(Button)(({ theme }) => ({
     height: '45px',
     margin: '0 0 30px 30px',
     padding: '0 81px 0 35px',
+    textTransform: 'uppercase',
     transition: '0.19s',
     '&::after': {
         content: '""',

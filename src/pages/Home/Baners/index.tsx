@@ -10,7 +10,7 @@ import { useGetBannersQuery } from "../../../redux/api/baners/api"
 const Baners: FC= () => {
     const navigate = useNavigate();
     const { data, isLoading } = useGetBannersQuery();
-    console.log(data);
+
     if (!data || isLoading) return null 
     
     return(
